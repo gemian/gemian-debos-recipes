@@ -1,0 +1,41 @@
+{{- $image := or .image "gemian-cosmopda.tgz" -}}
+
+architecture: arm64
+
+actions:
+  - action: recipe
+    description: Setup Gemian rootfs
+    recipe: gemian-common.yaml
+
+  - action: overlay
+    description: Adding Cosmo Communicator overlay
+    source: overlay/cosmopda
+    destination: /
+
+  - action: apt
+    description: Installing additional Debian packages
+    packages: [ curl, gnupg, openssh-server, sudo ]
+
+  - action: apt
+    description: Installing Cosmo Communicator-specific packages
+    packages: [ droid-hal-cosmopda ]
+
+  - action: run
+    chroot: true
+    command: echo cosmopda > /etc/hostname
+
+  - action: run
+    chroot: true
+    description: Setting password on root user (useful for testing, remove later)
+    command: echo root:root | chpasswd
+
+  - action: apt
+    description: Installing MATE desktop environment
+    packages:
+      - lightdm
+      - mate-desktop-environment
+      - xserver-xorg
+
+  - action: pack
+    file: {{ $image }}
+    compression: gz
