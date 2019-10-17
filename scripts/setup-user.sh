@@ -16,3 +16,4 @@ groupadd -g 3005 aid_inet_admin
 groupadd -g 100000 gemini
 
 useradd -m -u 100000 -g 100000 -G audio,video,sudo,aid_system,aid_graphics,aid_input,aid_audio,aid_net_bt_admin,aid_net_bt,aid_inet,aid_inet_raw,aid_inet_admin -s /bin/bash gemini
+echo gemini:gemini | chpasswd
