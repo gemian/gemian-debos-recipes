@@ -1,0 +1,36 @@
+{{- $image := or .image "gemian-cosmocom.img" -}}
+
+architecture: arm64
+
+actions:
+  - action: recipe
+    description: Setup Gemian rootfs
+    recipe: gemian-common.yaml
+
+  - action: apt
+    description: Installing additional Debian packages
+    packages: [ curl, gnupg, openssh-server, sudo ]
+
+  - action: apt
+    description: Installing Cosmo Communicator-specific packages
+    packages: [ droid-hal-cosmopda ]
+
+  - action: run
+    chroot: true
+    command: echo cosmopda > /etc/hostname
+
+  - action: run
+    chroot: true
+    description: Setting password on root user (useful for testing, remove later)
+    command: echo root:root | chpasswd
+
+  - action: image-file
+    imagename: {{ $image }}
+    imagesize: 3G
+    fs: ext4
+    fsname: "gemian"
+
+  - action: filesystem-deploy
+    setup-fstab: false
+    setup-kernel-cmdline: false
+    description: Deploying filesystem onto image
