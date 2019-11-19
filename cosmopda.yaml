@@ -52,6 +52,11 @@ actions:
       - xserver-xorg-input-evdev
 {{ end }}
 
+{{ if eq $variant "kde-plasma" }}
+  - action: recipe
+    recipe: variants/kde-plasma.yaml
+{{ end }}
+
   - action: run
     chroot: true
     description: Fix default DPI
