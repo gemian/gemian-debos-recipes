@@ -4,7 +4,20 @@ actions:
   - action: apt
     description: Installing KDE Plasma desktop environment
     packages:
-      - lxdm
+      - breeze-gtk-theme
+      - fonts-noto
+      - kate
+      - kde-config-gtk-style
       - kde-plasma-desktop
+      - khotkeys
+      - kio-extras
+      - kscreen
+      - ksysguard
+      - kwin-x11
+      - libpam-kwallet5
+      - lxdm
+      - plasma-discover
+      - sni-qt
+      - systemsettings
       - xserver-xorg
       - xserver-xorg-input-evdev
