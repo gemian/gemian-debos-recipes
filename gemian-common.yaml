@@ -15,7 +15,7 @@ actions:
 
   - action: apt
     description: Installing additional Debian packages
-    packages: [ curl, gnupg, openssh-server, sudo ]
+    packages: [ curl, gnupg, net-tools, openssh-server, sudo ]
 
   - action: run
     chroot: true
@@ -29,12 +29,19 @@ actions:
       - glamor-hybris
       - hybris-usb
       - libhybris
+      - pulseaudio
+      - pulseaudio-module-droid
       - xserver-xorg-video-hwcomposer
 
   - action: run
     chroot: true
     description: Enabling libhybris EGL libs
     command: ln -s /usr/lib/aarch64-linux-gnu/libhybris-egl/ld.so.conf /etc/ld.so.conf.d/00_libhybris-egl.conf && ldconfig
+
+  - action: run
+    chroot: true
+    description: Applying custom PulseAudio config
+    command: ln -sf default.pa.gemian /etc/pulse/default.pa
 
   - action: run
     chroot: true

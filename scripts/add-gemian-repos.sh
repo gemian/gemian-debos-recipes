@@ -9,7 +9,12 @@ echo "deb [trusted=yes] http://gemian-buster.thinkglobally.org/buster/ buster ma
 echo "" >> /etc/apt/preferences.d/gemian.pref
 echo "Package: *" >> /etc/apt/preferences.d/gemian.pref
 echo "Pin: origin gemian.thinkglobally.org" >> /etc/apt/preferences.d/gemian.pref
-echo "Pin: release o=Gemian,a=buster" >> /etc/apt/preferences.d/gemian.pref
+echo "Pin-Priority: 1000" >> /etc/apt/preferences.d/gemian.pref
+
+echo "" >> /etc/apt/preferences.d/gemian.pref
+echo "Package: *" >> /etc/apt/preferences.d/gemian.pref
+echo "Pin: origin gemian-buster.thinkglobally.org" >> /etc/apt/preferences.d/gemian.pref
 echo "Pin-Priority: 2000" >> /etc/apt/preferences.d/gemian.pref
 
 curl http://gemian.thinkglobally.org/archive-key.asc | apt-key add -
+curl http://gemian-buster.thinkglobally.org/gemian-buster-key.asc | apt-key add -
