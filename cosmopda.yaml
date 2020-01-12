@@ -32,14 +32,8 @@ actions:
     command: echo root:root | chpasswd
 
 {{ if eq $variant "lxqt" }}
-  - action: apt
-    description: Installing LXQt desktop environment
-    packages:
-      - lxdm
-      - lxqt
-      - breeze-icon-theme
-      - xserver-xorg
-      - xserver-xorg-input-evdev
+  - action: recipe
+    recipe: variants/lxqt.yaml
 {{ end }}
 
 {{ if eq $variant "mate" }}

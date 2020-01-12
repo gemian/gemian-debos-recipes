@@ -5,6 +5,7 @@ actions:
     description: Installing KDE Plasma desktop environment
     packages:
       - breeze-gtk-theme
+      - chromium
       - fonts-noto
       - kate
       - kde-config-gtk-style
@@ -16,7 +17,10 @@ actions:
       - kwin-x11
       - libpam-kwallet5
       - lxdm
+      - network-manager
+      - plasma-browser-integration
       - plasma-discover
+      - plasma-nm
       - sni-qt
       - systemsettings
       - xserver-xorg

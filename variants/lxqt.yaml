@@ -1,1 +1,13 @@
- 
+architecture: arm64
+
+actions:
+  - action: apt
+    description: Installing LXQt desktop environment
+    packages:
+      - breeze-icon-theme
+      - cmst
+      - connman
+      - lxdm
+      - lxqt
+      - xserver-xorg
+      - xserver-xorg-input-evdev
