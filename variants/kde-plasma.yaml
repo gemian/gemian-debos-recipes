@@ -20,6 +20,7 @@ actions:
       - network-manager
       - plasma-browser-integration
       - plasma-discover
+      - plasma-pa
       - plasma-nm
       - sni-qt
       - systemsettings
