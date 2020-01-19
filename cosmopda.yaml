@@ -70,7 +70,7 @@ actions:
 {{ if eq $output "image" }}
   - action: image-file
     imagename: {{ $image }}
-    imagesize: 3G
+    imagesize: 3221225472
     fs: ext4
     fsname: "gemian"
 
