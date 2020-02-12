@@ -31,6 +31,7 @@ actions:
       - libhybris
       - pulseaudio
       - pulseaudio-module-droid
+      - xkb-data
       - xserver-xorg-video-hwcomposer
 
   - action: run
