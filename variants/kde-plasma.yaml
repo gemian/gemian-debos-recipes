@@ -6,6 +6,7 @@ actions:
     packages:
       - breeze-gtk-theme
       - chromium
+      - chromium-sandbox
       - fonts-noto
       - kate
       - kde-config-gtk-style
@@ -22,6 +23,7 @@ actions:
       - plasma-discover
       - plasma-pa
       - plasma-nm
+      - powerdevil
       - sni-qt
       - systemsettings
       - xserver-xorg
