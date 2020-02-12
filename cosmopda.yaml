@@ -31,6 +31,11 @@ actions:
     description: Setting password on root user (useful for testing, remove later)
     command: echo root:root | chpasswd
 
+  - action: run
+    chroot: true
+    description: Add apt sandbox user to Android inet group
+    command: sed -i 's/_apt:x:100:65534/_apt:x:100:3003/g' /etc/passwd
+
 {{ if eq $variant "lxqt" }}
   - action: recipe
     recipe: variants/lxqt.yaml
