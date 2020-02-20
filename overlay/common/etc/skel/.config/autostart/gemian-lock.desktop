@@ -1,0 +1,5 @@
+[Desktop Entry]
+Exec=xss-lock gemian-lock
+Name=Screen Lock
+Type=Application
+Version=1.0

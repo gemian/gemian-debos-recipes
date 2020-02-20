@@ -26,13 +26,16 @@ actions:
     description: Installing packages for libhybris-based HW adaptation
     packages:
       - drihybris
+      - gemian-lock
       - glamor-hybris
       - hybris-usb
       - libhybris
       - pulseaudio
       - pulseaudio-module-droid
+      - repowerd
       - xkb-data
       - xserver-xorg-video-hwcomposer
+      - xss-lock
 
   - action: run
     chroot: true
