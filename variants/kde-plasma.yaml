@@ -28,3 +28,8 @@ actions:
       - systemsettings
       - xserver-xorg
       - xserver-xorg-input-evdev
+
+  - action: run
+    chroot: true
+    description: Fix default session in LXDM
+    command: sed -e "s@# session=/usr/bin/startlxde@session=/usr/bin/startkde@" -i /etc/lxdm/lxdm.conf
