@@ -218,6 +218,6 @@ useradd --gid 9998 --no-create-home --home-dir /nonexistent --no-user-group --sy
 groupadd --gid 9999 aid_nobody
 useradd --gid 9999 --no-create-home --home-dir /nonexistent --no-user-group --system --shell /usr/sbin/nologin --uid 9999 aid_nobody
 
-groupadd -g 100000 gemini
-useradd -m -u 100000 -g 100000 -G audio,video,sudo,aid_system,aid_graphics,aid_input,aid_audio,aid_net_bt_admin,aid_net_bt,aid_inet,aid_net_raw,aid_net_admin -s /bin/bash gemini
-echo gemini:gemini | chpasswd
+groupadd -g 100000 cosmo
+useradd -m -u 100000 -g 100000 -G audio,video,sudo,aid_system,aid_graphics,aid_input,aid_audio,aid_net_bt_admin,aid_net_bt,aid_inet,aid_net_raw,aid_net_admin -s /bin/bash cosmo
+echo cosmo:cosmo | chpasswd
