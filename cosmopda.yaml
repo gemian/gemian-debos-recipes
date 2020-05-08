@@ -36,6 +36,11 @@ actions:
     description: Add apt sandbox user to Android inet group
     command: sed -i 's/_apt:x:100:65534/_apt:x:100:3003/g' /etc/passwd
 
+  - action: run
+    chroot: true
+    description: depmod kernel modules
+    command: depmod -a 4.4.146
+
 {{ if eq $variant "lxqt" }}
   - action: recipe
     recipe: variants/lxqt.yaml
