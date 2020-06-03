@@ -39,6 +39,7 @@ actions:
       - pulseaudio-module-droid
       - pulseaudio-module-droid-hidl
       - repowerd
+      - urfkill
       - xkb-data
       - xserver-xorg-video-hwcomposer
       - xss-lock
