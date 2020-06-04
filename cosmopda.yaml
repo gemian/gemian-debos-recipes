@@ -23,6 +23,11 @@ actions:
     packages: [ droid-hal-cosmopda ]
 
   - action: run
+    description: Generate /usr/share/kernel/linux-boot.img for Cosmo Communicator
+    chroot: true
+    command: /usr/sbin/update-gemian-boot-image cosmocom
+
+  - action: run
     chroot: true
     command: echo cosmopda > /etc/hostname
 
