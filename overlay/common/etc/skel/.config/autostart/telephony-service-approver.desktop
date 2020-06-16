@@ -1,0 +1,16 @@
+[Desktop Entry]
+Comment=Incoming phone calls approver application.
+Exec=/usr/bin/telephony-service-approver
+GenericName=
+Icon=system-run
+MimeType=
+Name=
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=
