@@ -1,2 +1,14 @@
+[Compositing]
+AnimationSpeed=3
+Backend=XRender
+Enabled=true
+GLCore=false
+GLPreferBufferSwap=a
+GLTextureFilter=2
+HiddenPreviews=5
+OpenGLIsUnsafe=false
+WindowsBlockCompositing=true
+XRenderSmoothScale=false
+
 [Plugins]
 contrastEnabled=false
