@@ -7,6 +7,9 @@ actions:
       - breeze-gtk-theme
       - chromium
       - chromium-sandbox
+      - gstreamer1.0-plugins-good
+      - gstreamer1.0-plugins-bad
+      - gstreamer1.0-qt5
       - fonts-noto
       - kate
       - kde-config-gtk-style
