@@ -31,7 +31,7 @@ actions:
       - systemsettings
       - xserver-xorg
       - xserver-xorg-input-evdev
-      - codi
+      - codi-app
 
   - action: run
     chroot: true
