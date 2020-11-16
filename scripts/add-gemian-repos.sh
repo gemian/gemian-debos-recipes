@@ -16,5 +16,5 @@ echo "Package: *" >> /etc/apt/preferences.d/gemian.pref
 echo "Pin: origin gemian-buster.thinkglobally.org" >> /etc/apt/preferences.d/gemian.pref
 echo "Pin-Priority: 2000" >> /etc/apt/preferences.d/gemian.pref
 
-curl http://gemian.thinkglobally.org/archive-key.asc | apt-key add -
+curl https://gemian.thinkglobally.org/archive-key.asc | apt-key add -
 curl http://gemian-buster.thinkglobally.org/gemian-buster-key.asc | apt-key add -
