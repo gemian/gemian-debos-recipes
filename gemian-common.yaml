@@ -15,7 +15,7 @@ actions:
 
   - action: apt
     description: Installing additional Debian packages
-    packages: [ curl, gnupg, net-tools, openssh-server, sudo ]
+    packages: [ curl, gnupg, net-tools, openssh-server, sudo, avahi-daemon ]
 
   - action: run
     chroot: true

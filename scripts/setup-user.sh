@@ -223,3 +223,4 @@ useradd -m -u 100000 -g 100000 -G audio,input,video,sudo,aid_system,aid_graphics
 echo cosmo:cosmo | chpasswd
 
 usermod systemd-timesync -a -G aid_inet
+usermod avahi -a -G aid_inet
