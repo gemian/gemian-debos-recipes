@@ -43,6 +43,7 @@ actions:
       - xkb-data
       - xserver-xorg-video-hwcomposer
       - xss-lock
+      - mobile-broadband-provider-info
 
   - action: run
     chroot: true
