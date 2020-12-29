@@ -20,7 +20,7 @@ actions:
 
   - action: apt
     description: Installing Cosmo Communicator-specific packages
-    packages: [ droid-hal-cosmopda ]
+    packages: [ droid-hal-cosmopda, bluebinder ]
 
   - action: run
     description: Generate /usr/share/kernel/linux-boot.img for Cosmo Communicator
