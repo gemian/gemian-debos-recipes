@@ -68,7 +68,3 @@ actions:
     description: Setting Gemian users
     script: scripts/setup-user.sh
 
-  - action: run
-    chroot: true
-    description: Removing /var/log/journal to avoid persisant journaling
-    command: rm -rf /var/log/journal/
