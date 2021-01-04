@@ -33,6 +33,11 @@ actions:
       - xserver-xorg-input-evdev
       - codi-app
       - kde-spectacle
+      - bluetooth
+      - rfkill
+      - bluedevil
+      - bluez-tools
+      - pulseaudio-module-bluetooth
 
   - action: run
     chroot: true
