@@ -14,7 +14,7 @@ actions:
 
   - action: apt
     description: Installing Gemini PDA-specific packages
-    packages: [ droid-hal-cosmopda gemian-system initramfs-tools-halium gemian-modular-kernel ]
+    packages: [ droid-hal-cosmopda initramfs-tools-halium gemian-modular-kernel ]
 
   - action: run
     chroot: true
