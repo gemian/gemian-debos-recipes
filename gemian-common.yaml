@@ -15,7 +15,7 @@ actions:
 
   - action: apt
     description: Installing additional Debian packages
-    packages: [ curl, gnupg, net-tools, openssh-server, sudo, avahi-daemon ]
+    packages: [ curl, gnupg, net-tools, openssh-server, sudo, avahi-daemon, locales, bash-completion ]
 
   - action: run
     chroot: true
@@ -43,10 +43,6 @@ actions:
       - xkb-data
       - xserver-xorg-video-hwcomposer
       - xss-lock
-      - bash-completion
-      - gemian-system
-      - lxc-android
-      - locales
 
   - action: run
     chroot: true

@@ -14,7 +14,13 @@ actions:
 
   - action: apt
     description: Installing Gemini PDA-specific packages
-    packages: [ droid-hal-cosmopda initramfs-tools-halium gemian-modular-kernel ]
+    target-device: mt6797
+    packages:
+      - droid-hal-cosmopda
+      - initramfs-tools-halium
+      - gemian-modular-kernel
+      - gemian-system
+      - lxc-android
 
   - action: run
     chroot: true
