@@ -23,6 +23,7 @@ actions:
     target-device: mt6771
     packages:
       - bluebinder
+      - media-hub
       - gemian-system
       - lxc-android
 
