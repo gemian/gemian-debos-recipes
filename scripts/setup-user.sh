@@ -224,3 +224,5 @@ echo cosmo:cosmo | chpasswd
 
 usermod systemd-timesync -a -G aid_inet
 usermod avahi -a -G aid_inet
+sudo usermod pulse -a -G aid_media
+sudo usermod cosmo -a -G aid_media
