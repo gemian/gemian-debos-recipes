@@ -26,6 +26,7 @@ actions:
       - media-hub
       - gemian-system
       - lxc-android
+      - cosmo-linux-kernel
 
   - action: run
     description: Generate /usr/share/kernel/linux-boot.img for Cosmo Communicator
