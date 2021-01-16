@@ -26,6 +26,8 @@ actions:
       - media-hub
       - gemian-system
       - lxc-android
+      - lxcfs
+      - uidmap
       - cosmo-linux-kernel
 
   - action: run
@@ -80,6 +82,11 @@ actions:
     chroot: true
     description: Removing xserver-xorg-input-libinput as it does not work with touchscreen yet
     command: apt remove xserver-xorg-input-libinput
+
+  - action: run
+    chroot: true
+    description: Removing /var/log/journal to avoid persisant journaling
+    command: rm -rf /var/log/journal/
 
 {{ if eq $output "tarball" }}
   - action: pack
