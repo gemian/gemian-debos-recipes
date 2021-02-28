@@ -16,7 +16,6 @@ actions:
     description: Installing Gemini PDA-specific packages
     target-device: mt6797
     packages:
-      - droid-hal-cosmopda
       - initramfs-tools-halium
       - gemian-modular-kernel
       - gemian-system
