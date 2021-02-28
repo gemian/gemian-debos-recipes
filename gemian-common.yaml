@@ -43,6 +43,7 @@ actions:
       - xkb-data
       - xserver-xorg-video-hwcomposer
       - xss-lock
+      - camera-app
 
   - action: run
     chroot: true
