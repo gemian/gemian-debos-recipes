@@ -219,7 +219,7 @@ groupadd --gid 9999 aid_nobody
 useradd --gid 9999 --no-create-home --home-dir /nonexistent --no-user-group --system --shell /usr/sbin/nologin --uid 9999 aid_nobody
 
 groupadd -g 100000 cosmo
-useradd -m -u 100000 -g 100000 -G audio,input,video,sudo,dialout,aid_media,aid_system,aid_graphics,aid_input,aid_audio,aid_net_bt_admin,aid_net_bt,aid_inet,aid_net_raw,aid_net_admin -s /bin/bash cosmo
+useradd -m -u 100000 -g 100000 -G audio,input,video,sudo,dialout,aid_media,aid_system,aid_graphics,aid_input,aid_radio,aid_wakelock,aid_audio,aid_net_bt_admin,aid_net_bt,aid_inet,aid_net_raw,aid_net_admin -s /bin/bash cosmo
 echo cosmo:cosmo | chpasswd
 
 usermod systemd-timesync -a -G aid_inet
