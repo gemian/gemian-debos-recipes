@@ -102,6 +102,10 @@ actions:
     fs: ext4
     fsname: "gemian"
 
+  - action: run
+    description: Allow jenkins user to access file
+    command: chown jenkins.jenkins {{ $image }}
+
   - action: filesystem-deploy
     setup-fstab: false
     setup-kernel-cmdline: false
