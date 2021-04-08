@@ -1,4 +1,4 @@
-{{- $image := or .image "gemian-cosmopda.tgz" -}}
+{{- $image := or .image "gemian-cosmocom.tgz" -}}
 {{- $output := or .output "tarball" -}}
 {{- $variant := or .variant "mate" -}}
 
@@ -20,7 +20,15 @@ actions:
 
   - action: apt
     description: Installing Cosmo Communicator-specific packages
-    packages: [ droid-hal-cosmopda ]
+    target-device: mt6771
+    packages:
+      - bluebinder
+      - media-hub
+      - gemian-system
+      - lxc-android
+      - lxcfs
+      - uidmap
+      - cosmo-linux-kernel
 
   - action: run
     description: Generate /usr/share/kernel/linux-boot.img for Cosmo Communicator
@@ -29,12 +37,11 @@ actions:
 
   - action: run
     chroot: true
-    command: echo cosmopda > /etc/hostname
+    command: echo cosmocom > /etc/hostname
 
   - action: run
     chroot: true
-    description: Setting password on root user (useful for testing, remove later)
-    command: echo root:root | chpasswd
+    command: echo "127.0.0.1	cosmocom" >> /etc/hosts
 
   - action: run
     chroot: true
@@ -76,6 +83,11 @@ actions:
     description: Removing xserver-xorg-input-libinput as it does not work with touchscreen yet
     command: apt remove xserver-xorg-input-libinput
 
+  - action: run
+    chroot: true
+    description: Removing /var/log/journal to avoid persisant journaling
+    command: rm -rf /var/log/journal/
+
 {{ if eq $output "tarball" }}
   - action: pack
     file: {{ $image }}
@@ -85,9 +97,14 @@ actions:
 {{ if eq $output "image" }}
   - action: image-file
     imagename: {{ $image }}
-    imagesize: 3221225472
+    imagesize: 6000000000
+
     fs: ext4
     fsname: "gemian"
+
+  - action: run
+    description: Allow jenkins user to access file
+    command: chown jenkins.jenkins {{ $image }}
 
   - action: filesystem-deploy
     setup-fstab: false

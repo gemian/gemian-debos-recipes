@@ -15,7 +15,7 @@ actions:
 
   - action: apt
     description: Installing additional Debian packages
-    packages: [ curl, gnupg, net-tools, openssh-server, sudo ]
+    packages: [ curl, gnupg, net-tools, openssh-server, sudo, avahi-daemon, locales, bash-completion ]
 
   - action: run
     chroot: true
@@ -43,6 +43,7 @@ actions:
       - xkb-data
       - xserver-xorg-video-hwcomposer
       - xss-lock
+      - camera-app
 
   - action: run
     chroot: true
@@ -63,3 +64,4 @@ actions:
     chroot: true
     description: Setting Gemian users
     script: scripts/setup-user.sh
+
