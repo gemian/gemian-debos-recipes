@@ -45,6 +45,29 @@ actions:
       - xss-lock
       - camera-app
       - gemian-setup
+      - fonts-dejavu
+      - fonts-dejavu-core
+      - fonts-dejavu-extra
+      - fonts-freefont-ttf
+      - fonts-hack-ttf
+      - fonts-liberation
+      - fonts-lyx
+      - fonts-noto
+      - fonts-noto-cjk
+      - fonts-noto-hinted
+      - fonts-noto-mono
+      - fonts-opensymbol
+      - fonts-symbola
+      - fonts-vlgothic
+      - fonts-ipafont
+      - ttf-ancient-fonts-symbola
+      - xfonts-100dpi
+      - xfonts-75dpi
+      - xfonts-base
+      - xfonts-encodings
+      - xfonts-scalable
+      - xfonts-utils
+
 
   - action: run
     chroot: true
