@@ -60,6 +60,8 @@ actions:
       - fonts-symbola
       - fonts-vlgothic
       - fonts-ipafont
+      - fonts-kacst
+      - fonts-farsiweb
       - ttf-ancient-fonts-symbola
       - xfonts-100dpi
       - xfonts-75dpi
