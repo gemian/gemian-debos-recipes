@@ -136,5 +136,5 @@ load-module module-filter-heuristics
 load-module module-filter-apply
 
 ### Make some devices default
-set-default-sink sink.primary
-set-default-source source.primary
+set-default-sink sink.primary_output
+set-default-source source.droid
