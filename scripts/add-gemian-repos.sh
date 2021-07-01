@@ -1,6 +1,7 @@
 #!/bin/sh
 
 rm -f /etc/resolv.conf
+echo "93.189.6.11 gemian-buster.thinkglobally.org" >> /etc/hosts
 echo "nameserver 8.8.8.8" > /etc/resolv.conf
 
 echo "deb [trusted=yes] http://gemian-planet.thinkglobally.org/bullseye/ bullseye main" >> /etc/apt/sources.list.d/gemian.list
