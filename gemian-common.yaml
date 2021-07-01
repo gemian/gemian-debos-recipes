@@ -2,7 +2,7 @@ architecture: arm64
 
 actions:
   - action: debootstrap
-    suite: "buster"
+    suite: "bullseye"
     components:
       - main
       - non-free
@@ -26,13 +26,13 @@ actions:
     description: Installing packages for libhybris-based HW adaptation
     packages:
       - audiosystem-passthrough
-      - dialer-app
+#      - dialer-app
       - drihybris
-      - gemian-lock
-      - glamor-hybris
+#      - gemian-lock
+#      - glamor-hybris
       - hybris-usb
       - libhybris
-      - messaging-app
+#      - messaging-app
       - ofono
       - ofono-ril-binder-plugin
       - pulseaudio
@@ -41,10 +41,10 @@ actions:
       - repowerd
       - urfkill
       - xkb-data
-      - xserver-xorg-video-hwcomposer
-      - xss-lock
-      - camera-app
-      - gemian-setup
+#      - xserver-xorg-video-hwcomposer
+#      - xss-lock
+#      - camera-app
+#      - gemian-setup
       - fonts-dejavu
       - fonts-dejavu-core
       - fonts-dejavu-extra

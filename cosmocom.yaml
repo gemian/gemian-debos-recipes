@@ -11,7 +11,7 @@ actions:
 
   - action: overlay
     description: Adding Cosmo Communicator overlay
-    source: overlay/cosmopda
+    source: overlay/cosmocom
     destination: /
 
   - action: apt
@@ -23,9 +23,9 @@ actions:
     target-device: mt6771
     packages:
       - bluebinder
-      - media-hub
-      - gemian-system
-      - lxc-android
+#      - media-hub
+#      - gemian-system
+#      - lxc-android
       - lxcfs
       - uidmap
       - cosmo-linux-kernel
@@ -54,23 +54,23 @@ actions:
     command: depmod -a 4.4.146
 
 {{ if eq $variant "lxqt" }}
-  - action: recipe
-    recipe: variants/lxqt.yaml
+#  - action: recipe
+#    recipe: variants/lxqt.yaml
 {{ end }}
 
 {{ if eq $variant "mate" }}
-  - action: apt
-    description: Installing MATE desktop environment
-    packages:
-      - lxdm
-      - mate-desktop-environment
-      - xserver-xorg
-      - xserver-xorg-input-evdev
+#  - action: apt
+#    description: Installing MATE desktop environment
+#    packages:
+#      - lxdm
+#      - mate-desktop-environment
+#      - xserver-xorg
+#      - xserver-xorg-input-evdev
 {{ end }}
 
 {{ if eq $variant "kde-plasma" }}
-  - action: recipe
-    recipe: variants/kde-plasma.yaml
+#  - action: recipe
+#    recipe: variants/kde-plasma.yaml
 {{ end }}
 
   - action: run
