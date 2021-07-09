@@ -33,6 +33,7 @@ actions:
       - cosmo-linux-kernel
       - devscripts
       - build-essential
+      - kexec-tools
 
   - action: run
     description: Generate /usr/share/kernel/linux-boot.img for Cosmo Communicator
