@@ -30,7 +30,7 @@ actions:
 #      - drihybris
 #      - gemian-lock
 #      - glamor-hybris
-#      - hybris-usb
+      - hybris-usb
       - libhybris
 #      - messaging-app
       - ofono
