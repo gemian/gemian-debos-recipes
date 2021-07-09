@@ -31,6 +31,8 @@ actions:
       - libglx-mesa0
       - libgl1-mesa-dri
       - cosmo-linux-kernel
+      - devscripts
+      - build-essential
 
   - action: run
     description: Generate /usr/share/kernel/linux-boot.img for Cosmo Communicator
