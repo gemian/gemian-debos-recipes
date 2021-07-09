@@ -75,10 +75,10 @@ actions:
 #    recipe: variants/kde-plasma.yaml
 {{ end }}
 
-  - action: run
-    chroot: true
-    description: Fix default DPI
-    command: sed -e "s@\\[server\\]@[server]\\narg=/usr/bin/Xorg -dpi 192\n@" -i /etc/lxdm/lxdm.conf
+#  - action: run
+#    chroot: true
+#    description: Fix default DPI
+#    command: sed -e "s@\\[server\\]@[server]\\narg=/usr/bin/Xorg -dpi 192\n@" -i /etc/lxdm/lxdm.conf
 
   - action: run
     chroot: true
