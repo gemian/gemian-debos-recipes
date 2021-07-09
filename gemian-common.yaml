@@ -25,20 +25,20 @@ actions:
   - action: apt
     description: Installing packages for libhybris-based HW adaptation
     packages:
-      - audiosystem-passthrough
+#      - audiosystem-passthrough
 #      - dialer-app
-      - drihybris
+#      - drihybris
 #      - gemian-lock
 #      - glamor-hybris
-      - hybris-usb
+#      - hybris-usb
       - libhybris
 #      - messaging-app
       - ofono
-      - ofono-ril-binder-plugin
+#      - ofono-ril-binder-plugin
       - pulseaudio
       - pulseaudio-module-droid
-      - pulseaudio-module-droid-hidl
-      - repowerd
+#      - pulseaudio-module-droid-hidl
+#      - repowerd
       - urfkill
       - xkb-data
 #      - xserver-xorg-video-hwcomposer
