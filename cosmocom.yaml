@@ -22,7 +22,7 @@ actions:
     description: Installing Cosmo Communicator-specific packages
     target-device: mt6771
     packages:
-      - bluebinder
+#      - bluebinder
 #      - media-hub
 #      - gemian-system
 #      - lxc-android
