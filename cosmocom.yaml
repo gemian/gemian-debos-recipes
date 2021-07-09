@@ -28,6 +28,8 @@ actions:
 #      - lxc-android
       - lxcfs
       - uidmap
+      - libglx-mesa0
+      - libgl1-mesa-dri
       - cosmo-linux-kernel
 
   - action: run
