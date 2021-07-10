@@ -25,7 +25,7 @@ actions:
 #      - bluebinder
 #      - media-hub
       - gemian-system
-      - lxc-android
+#      - lxc-android
       - lxcfs
       - uidmap
       - libglx-mesa0
