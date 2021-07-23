@@ -209,6 +209,9 @@ useradd --gid 3012 --no-create-home --home-dir /nonexistent --no-user-group --sy
 groupadd --gid 3013 aid_rfs_shared_old
 useradd --gid 3013 --no-create-home --home-dir /nonexistent --no-user-group --system --shell /usr/sbin/nologin --uid 3013 aid_rfs_shared_old
 
+groupadd --gid 4001 radio
+useradd --gid 4001 --no-create-home --home-dir /nonexistent --no-user-group --system --shell /usr/sbin/nologin --uid 4001 radio
+
 groupadd --gid 9997 aid_everybody
 useradd --gid 9997 --no-create-home --home-dir /nonexistent --no-user-group --system --shell /usr/sbin/nologin --uid 9997 aid_everybody
 

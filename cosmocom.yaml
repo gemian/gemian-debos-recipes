@@ -11,7 +11,7 @@ actions:
 
   - action: overlay
     description: Adding Cosmo Communicator overlay
-    source: overlay/cosmopda
+    source: overlay/cosmocom
     destination: /
 
   - action: apt
@@ -26,9 +26,14 @@ actions:
       - media-hub
       - gemian-system
       - lxc-android
+      - lxc
+      - debhelper
       - lxcfs
       - uidmap
       - cosmo-linux-kernel
+      - devscripts
+      - build-essential
+      - kexec-tools
 
   - action: run
     description: Generate /usr/share/kernel/linux-boot.img for Cosmo Communicator

@@ -63,6 +63,8 @@ load-module module-switch-on-port-available
 load-module module-null-sink sink_name=sink.fake.sco rate=8000 channels=1
 load-module module-null-source source_name=source.fake.sco rate=8000 channels=1
 #load-module module-bluetooth-discover bluez4_args="sco_sink=sink.fake.sco sco_source=source.fake.sco" bluez5_args="headset=droid"
+load-module module-bluetooth-discover
+load-module module-bluetooth-policy
 
 #load-module module-policy-enforcement
 
@@ -136,5 +138,5 @@ load-module module-filter-heuristics
 load-module module-filter-apply
 
 ### Make some devices default
-set-default-sink sink.primary
-set-default-source source.primary
+set-default-sink sink.primary_output
+set-default-source source.droid
