@@ -1,0 +1,125 @@
+{{- $image := or .image "gemian-astroslide.tgz" -}}
+{{- $output := or .output "tarball" -}}
+{{- $variant := or .variant "mate" -}}
+
+architecture: arm64
+
+actions:
+  - action: recipe
+    description: Setup Gemian rootfs
+    recipe: gemian-common.yaml
+
+  - action: overlay
+    description: Adding Astro Slide overlay
+    source: overlay/astroslide
+    destination: /
+
+  - action: apt
+    description: Installing additional Debian packages
+    packages: [ curl, gnupg, openssh-server, sudo ]
+
+  - action: apt
+    description: Installing Astro Slide-specific packages
+    target-device: mt6873
+    packages:
+#      - bluebinder
+#      - media-hub
+#      - gemian-system
+#      - lxc-android
+      - lxc
+      - debhelper
+      - lxcfs
+      - uidmap
+      - libglx-mesa0
+      - libgl1-mesa-dri
+      - astro-linux-kernel
+      - devscripts
+      - build-essential
+      - kexec-tools
+
+  - action: run
+    description: Generate /usr/share/kernel/astroslide-boot.img for Astro Slide
+    chroot: true
+    command: /usr/sbin/update-gemian-boot-image astroslide
+
+  - action: run
+    description: Generate /usr/share/kernel/astroslide-boot-lvm-gemian-bullseye.img for Astro Slide
+    chroot: true
+    command: /usr/sbin/update-gemian-boot-image astroslide gemian-bullseye
+
+  - action: run
+    chroot: true
+    command: echo astroslide > /etc/hostname
+
+  - action: run
+    chroot: true
+    command: echo "127.0.0.1	astroslide" >> /etc/hosts
+
+  - action: run
+    chroot: true
+    description: Add apt sandbox user to Android inet group
+    command: sed -i 's/_apt:x:100:65534/_apt:x:100:3003/g' /etc/passwd
+
+  - action: run
+    chroot: true
+    description: depmod kernel modules
+    command: depmod -a 4.4.146
+
+{{ if eq $variant "lxqt" }}
+#  - action: recipe
+#    recipe: variants/lxqt.yaml
+{{ end }}
+
+{{ if eq $variant "mate" }}
+#  - action: apt
+#    description: Installing MATE desktop environment
+#    packages:
+#      - lxdm
+#      - mate-desktop-environment
+#      - xserver-xorg
+#      - xserver-xorg-input-evdev
+{{ end }}
+
+{{ if eq $variant "kde-plasma" }}
+#  - action: recipe
+#    recipe: variants/kde-plasma.yaml
+{{ end }}
+
+#  - action: run
+#    chroot: true
+#    description: Fix default DPI
+#    command: sed -e "s@\\[server\\]@[server]\\narg=/usr/bin/Xorg -dpi 192\n@" -i /etc/lxdm/lxdm.conf
+
+  - action: run
+    chroot: true
+    description: Removing xserver-xorg-input-libinput as it does not work with touchscreen yet
+    command: apt remove xserver-xorg-input-libinput
+
+  - action: run
+    chroot: true
+    description: Removing /var/log/journal to avoid persisant journaling
+    command: rm -rf /var/log/journal/
+
+{{ if eq $output "tarball" }}
+  - action: pack
+    file: {{ $image }}
+    compression: gz
+{{ end }}
+
+{{ if eq $output "image" }}
+  - action: image-file
+    imagename: {{ $image }}
+    imagesize: 6000000000
+
+    fs: ext4
+    fsname: "gemian"
+
+  - action: run
+    description: Allow jenkins user to access file
+    command: chown jenkins.jenkins {{ $image }}
+
+  - action: filesystem-deploy
+    setup-fstab: false
+    setup-kernel-cmdline: false
+    description: Deploying filesystem onto image
+{{ end }}

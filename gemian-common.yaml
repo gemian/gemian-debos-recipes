@@ -71,7 +71,6 @@ actions:
       - xfonts-scalable
       - xfonts-utils
 
-
   - action: run
     chroot: true
     description: Enabling libhybris EGL libs
