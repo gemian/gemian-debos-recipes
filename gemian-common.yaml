@@ -2,7 +2,7 @@ architecture: arm64
 
 actions:
   - action: debootstrap
-    suite: "bullseye"
+    suite: "bookworm"
     components:
       - main
       - non-free
