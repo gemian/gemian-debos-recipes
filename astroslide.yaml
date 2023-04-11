@@ -36,6 +36,7 @@ actions:
       - devscripts
       - build-essential
       - kexec-tools
+      - pulseaudio-modules-droid-modern
 
   - action: run
     description: Generate /usr/share/kernel/astroslide-boot.img for Astro Slide

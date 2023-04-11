@@ -15,7 +15,7 @@ actions:
 
   - action: apt
     description: Installing additional Debian packages
-    packages: [ curl, gnupg, net-tools, openssh-server, sudo, avahi-daemon, locales, bash-completion ]
+    packages: [ curl, wget, gnupg, net-tools, openssh-server, sudo, avahi-daemon, locales, bash-completion, ca-certificates ]
 
   - action: run
     chroot: true
@@ -37,7 +37,7 @@ actions:
       - ofono
 #      - ofono-ril-binder-plugin
       - pulseaudio
-      - pulseaudio-module-droid
+#      - pulseaudio-module-droid-old
 #      - pulseaudio-module-droid-hidl
 #      - repowerd
       - urfkill

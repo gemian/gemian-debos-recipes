@@ -26,6 +26,8 @@ actions:
 #      - media-hub
 #      - gemian-system
 #      - lxc-android
+      - lxc
+      - debhelper
       - lxcfs
       - uidmap
       - libglx-mesa0
@@ -34,6 +36,7 @@ actions:
       - devscripts
       - build-essential
       - kexec-tools
+      - pulseaudio-module-droid-old
 
   - action: run
     description: Generate /usr/share/kernel/linux-boot.img for Cosmo Communicator

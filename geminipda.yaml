@@ -20,6 +20,7 @@ actions:
       - gemian-modular-kernel
       - gemian-system
       - lxc-android
+      - pulseaudio-module-droid-old
 
   - action: run
     chroot: true
