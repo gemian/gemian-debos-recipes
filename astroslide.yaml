@@ -63,8 +63,8 @@ actions:
 
   - action: run
     chroot: true
-    description: depmod kernel modules
-    command: depmod -a 4.4.146
+    description: depmod kernel modules (needs /lib/modules/N.N.N)
+    command: depmod -a 4.14.186
 
 {{ if eq $variant "lxqt" }}
 #  - action: recipe
