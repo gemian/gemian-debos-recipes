@@ -24,8 +24,8 @@ actions:
     packages:
 #      - bluebinder
 #      - media-hub
-#      - gemian-system
-#      - lxc-android
+      - gemian-system
+      - lxc-android
       - lxc
       - debhelper
       - lxcfs
@@ -35,6 +35,8 @@ actions:
       - astro-linux-kernel
       - devscripts
       - build-essential
+      - cmake
+      - network-manager
       - kexec-tools
       - pulseaudio-modules-droid-modern
 
@@ -46,7 +48,7 @@ actions:
   - action: run
     description: Generate /usr/share/kernel/astroslide-boot-lvm-gemian-bullseye.img for Astro Slide
     chroot: true
-    command: /usr/sbin/update-gemian-boot-image astroslide gemian-bullseye
+    command: /usr/sbin/update-gemian-boot-image astroslide gemian-bookworm
 
   - action: run
     chroot: true
@@ -110,7 +112,7 @@ actions:
 {{ if eq $output "image" }}
   - action: image-file
     imagename: {{ $image }}
-    imagesize: 8000000000
+    imagesize: 6000000000
 
     fs: ext4
     fsname: "gemian"

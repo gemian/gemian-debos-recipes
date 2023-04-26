@@ -15,7 +15,7 @@ actions:
 
   - action: apt
     description: Installing additional Debian packages
-    packages: [ curl, wget, gnupg, net-tools, openssh-server, sudo, avahi-daemon, locales, bash-completion, ca-certificates ]
+    packages: [ curl, wget, gnupg, net-tools, openssh-server, sudo, avahi-daemon, locales, bash-completion, ca-certificates, ntp ]
 
   - action: run
     chroot: true
@@ -45,7 +45,9 @@ actions:
 #      - xserver-xorg-video-hwcomposer
 #      - xss-lock
 #      - camera-app
-#      - gemian-setup
+      - halium-wrappers
+      - parse-android-dynparts
+      - gemian-setup
       - fonts-dejavu
       - fonts-dejavu-core
       - fonts-dejavu-extra
