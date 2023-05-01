@@ -22,8 +22,6 @@ actions:
     description: Installing Astro Slide-specific packages
     target-device: mt6873
     packages:
-#      - bluebinder
-#      - media-hub
       - gemian-system
       - lxc-android
       - lxc
@@ -67,36 +65,6 @@ actions:
     chroot: true
     description: depmod kernel modules (needs /lib/modules/N.N.N)
     command: depmod -a 4.14.186
-
-{{ if eq $variant "lxqt" }}
-#  - action: recipe
-#    recipe: variants/lxqt.yaml
-{{ end }}
-
-{{ if eq $variant "mate" }}
-#  - action: apt
-#    description: Installing MATE desktop environment
-#    packages:
-#      - lxdm
-#      - mate-desktop-environment
-#      - xserver-xorg
-#      - xserver-xorg-input-evdev
-{{ end }}
-
-{{ if eq $variant "kde-plasma" }}
-#  - action: recipe
-#    recipe: variants/kde-plasma.yaml
-{{ end }}
-
-#  - action: run
-#    chroot: true
-#    description: Fix default DPI
-#    command: sed -e "s@\\[server\\]@[server]\\narg=/usr/bin/Xorg -dpi 192\n@" -i /etc/lxdm/lxdm.conf
-
-#  - action: run
-#    chroot: true
-#    description: Removing xserver-xorg-input-libinput as it does not work with touchscreen yet
-#    command: apt remove xserver-xorg-input-libinput
 
   - action: run
     chroot: true

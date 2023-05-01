@@ -27,9 +27,9 @@ actions:
     packages:
 #      - audiosystem-passthrough
 #      - dialer-app
-#      - drihybris
+      - drihybris
 #      - gemian-lock
-#      - glamor-hybris
+      - glamor-hybris
       - hybris-usb
       - usbutils
       - libhybris
@@ -42,7 +42,7 @@ actions:
 #      - repowerd
       - urfkill
       - xkb-data
-#      - xserver-xorg-video-hwcomposer
+      - xserver-xorg-video-hwcomposer
 #      - xss-lock
 #      - camera-app
       - halium-wrappers

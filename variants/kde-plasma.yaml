@@ -4,40 +4,17 @@ actions:
   - action: apt
     description: Installing KDE Plasma desktop environment
     packages:
-      - breeze-gtk-theme
+      - kde-plasma-desktop
       - chromium
       - chromium-sandbox
-      - gstreamer1.0-plugins-good
-      - gstreamer1.0-plugins-bad
       - gstreamer1.0-qt5
-      - fonts-noto
-      - kate
-      - kde-config-gtk-style
-      - kde-plasma-desktop
-      - khotkeys
-      - kio-extras
-      - kscreen
-      - ksysguard
-      - kwin-x11
-      - libpam-kwallet5
       - lxdm
       - network-manager
-      - plasma-browser-integration
-      - plasma-discover
-      - plasma-pa
-      - plasma-nm
-      - powerdevil
-      - sni-qt
-      - systemsettings
-      - xserver-xorg
       - xserver-xorg-input-evdev
-      - codi-app
       - kde-spectacle
       - bluetooth
       - rfkill
-      - bluedevil
       - bluez-tools
-      - pulseaudio-module-bluetooth
 
   - action: run
     chroot: true
