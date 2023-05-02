@@ -1,1 +1,1 @@
-SUBSYSTEM=="input", ATTRS{name}=="Integrated keyboard", ENV{XKBMODEL}="planetcosmo"
+SUBSYSTEM=="input", ATTRS{name}=="Integrated keyboard", ENV{XKBMODEL}="planetastro"
