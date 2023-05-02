@@ -11,6 +11,7 @@ actions:
       - lxdm
       - network-manager
       - xserver-xorg-input-evdev
+      - xserver-xorg-input-libinput
       - kde-spectacle
       - bluetooth
       - rfkill
