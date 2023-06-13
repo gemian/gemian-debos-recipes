@@ -66,6 +66,11 @@ actions:
     description: depmod kernel modules (needs /lib/modules/N.N.N)
     command: depmod -a 4.14.186
 
+{{ if eq $variant "kde-plasma" }}
+  - action: recipe
+    recipe: variants/kde-plasma.yaml
+{{ end }}
+
   - action: run
     chroot: true
     description: Removing /var/log/journal to avoid persisant journaling

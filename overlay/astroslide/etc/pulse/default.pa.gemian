@@ -54,9 +54,9 @@ load-module module-switch-on-port-available
  .fail
 .endif
 
-.ifexists module-droid-hidl-28.so
+.ifexists module-droid-hidl.so
  .nofail
- load-module module-droid-hidl-28
+ load-module module-droid-hidl
  .fail
 .endif
 

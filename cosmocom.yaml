@@ -24,8 +24,8 @@ actions:
     packages:
 #      - bluebinder
 #      - media-hub
-#      - gemian-system
-#      - lxc-android
+      - gemian-system
+      - lxc-android
       - lxc
       - debhelper
       - lxcfs
@@ -35,13 +35,20 @@ actions:
       - cosmo-linux-kernel
       - devscripts
       - build-essential
+      - cmake
+      - network-manager
       - kexec-tools
-      - pulseaudio-module-droid-old
+      - pulseaudio-modules-droid-old
 
   - action: run
-    description: Generate /usr/share/kernel/linux-boot.img for Cosmo Communicator
+    description: Generate /usr/share/kernel/cosmocom-boot.img for Cosmo Communicator
     chroot: true
     command: /usr/sbin/update-gemian-boot-image cosmocom
+
+  - action: run
+    description: Generate /usr/share/kernel/cosmocom-boot-lvm-gemian-bookworm.img for Astro Slide
+    chroot: true
+    command: /usr/sbin/update-gemian-boot-image cosmocom gemian-bookworm
 
   - action: run
     chroot: true
@@ -61,35 +68,10 @@ actions:
     description: depmod kernel modules
     command: depmod -a 4.4.146
 
-{{ if eq $variant "lxqt" }}
-#  - action: recipe
-#    recipe: variants/lxqt.yaml
-{{ end }}
-
-{{ if eq $variant "mate" }}
-#  - action: apt
-#    description: Installing MATE desktop environment
-#    packages:
-#      - lxdm
-#      - mate-desktop-environment
-#      - xserver-xorg
-#      - xserver-xorg-input-evdev
-{{ end }}
-
 {{ if eq $variant "kde-plasma" }}
-#  - action: recipe
-#    recipe: variants/kde-plasma.yaml
+  - action: recipe
+    recipe: variants/kde-plasma.yaml
 {{ end }}
-
-#  - action: run
-#    chroot: true
-#    description: Fix default DPI
-#    command: sed -e "s@\\[server\\]@[server]\\narg=/usr/bin/Xorg -dpi 192\n@" -i /etc/lxdm/lxdm.conf
-
-  - action: run
-    chroot: true
-    description: Removing xserver-xorg-input-libinput as it does not work with touchscreen yet
-    command: apt remove xserver-xorg-input-libinput
 
   - action: run
     chroot: true

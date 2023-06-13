@@ -7,15 +7,37 @@ actions:
       - kde-plasma-desktop
       - chromium
       - chromium-sandbox
+      - gstreamer1.0-plugins-good
+      - gstreamer1.0-plugins-bad
       - gstreamer1.0-qt5
-      - lxdm
-      - network-manager
-      - xserver-xorg-input-evdev
-      - xserver-xorg-input-libinput
+      - kde-config-gtk-style
+      - khotkeys
       - kde-spectacle
       - bluetooth
       - rfkill
       - bluez-tools
+      - kwin-x11
+      - kio-extras
+      - kscreen
+      - kwin-x11
+      - lxdm
+      - network-manager
+      - plasma-browser-integration
+      - plasma-discover
+      - plasma-pa
+      - plasma-nm
+      - powerdevil
+      - systemsettings
+      - xserver-xorg
+      - xserver-xorg-input-evdev
+      - xserver-xorg-input-libinput
+      - bluedevil
+      - bluez-tools
+      - pulseaudio-module-bluetooth
+      - plasma-systemmonitor
+      - fmradio
+      - lomiri-camera-app
+      - qt5-cameraplugin-aal
 
   - action: run
     chroot: true
